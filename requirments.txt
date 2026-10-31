@@ -1,0 +1,12 @@
+# IMPORTANT: pin scikit-learn (and numpy) to the exact versions you trained
+# marquis_classifier.joblib with, e.g. scikit-learn==1.5.2
+# Find them by running this on your Mac:
+#   pip freeze | grep -iE "scikit-learn|numpy|scipy|joblib|flask|werkzeug"
+flask
+flask-cors
+gunicorn
+joblib
+scikit-learn==1.9.0
+numpy==2.5.2
+scipy
+tzdata
