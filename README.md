@@ -2,7 +2,7 @@
 
 A phone-camera web app that reads the colour reaction of a **Marquis colorimetric drug test kit**, classifies it with machine learning, and saves every result in a **tamper-evident log**.
 
-**Live demo:** https://YOUR-SERVICE-NAME.onrender.com
+**Live demo:** [https://YOUR-SERVICE-NAME.onrender.com](https://drug-testing-companion-2.onrender.com)
 *(Free hosting: the first load can take about a minute while the server wakes up. Demo data may reset on restart.)*
 
 > **Smart India Hackathon 2026** · Team **Tech Catalysts** (Team ID 12) · Problem Statement 26231 · MedTech / BioTech / HealthTech · Software
@@ -13,6 +13,10 @@ A phone-camera web app that reads the colour reaction of a **Marquis colorimetri
 
 Field drug test kits work by colour change, and officers judge that colour by eye. That is subjective, depends on lighting, and leaves no verifiable record. This app standardises the reading and makes every result traceable, using only the kit and a phone the officer already has.
 
+
+**Who benefits:** field officers (faster, standardised screening), supervisors (a traceable log) and the legal process (records that can be verified).
+
+> This is a screening aid. Every positive result is presumptive and still needs lab confirmation.
 ## What it does
 
 - Officer signs up and logs in.
@@ -48,6 +52,17 @@ Field drug test kits work by colour change, and officers judge that colour by ey
 
 Python · Flask · Flask-CORS · scikit-learn · joblib · SQLite · gunicorn · HTML / JavaScript (camera + canvas) · hosted on Render
 
+
+## Why it is useful
+
+- **Consistent results:** a trained model reads the colour, so the result depends less on who is looking or how they judge shades.
+- **No new hardware:** it works with the colorimetric kits already in use. All it needs is a phone with a camera and a browser, with no app to install.
+- **Instant on-site screening:** the officer gets a result in seconds, without waiting for a lab.
+- **Honest about uncertainty:** weak or ambiguous reactions are flagged INCONCLUSIVE instead of being forced into a guess.
+- **Tamper-evident records:** every test is hash-chained to the one before it, so any later edit is detectable. This strengthens the integrity of the evidence trail.
+- **Built-in accountability:** each test is tied to an officer ID, a timestamp and a GPS location, and replaces handwritten notes.
+- **Easy to verify:** supervisors or courts can check one record or the whole log with a single request.
+
 ## API
 
 | Endpoint | Method | Purpose |
@@ -70,19 +85,6 @@ synthetic_marquis_dataset.csv Training data
 requirements.txt              Python dependencies
 ```
 
-## Run locally
-
-```bash
-pip install -r requirements.txt
-python backend.py
-# open http://localhost:8000
-```
-
-## Deploy on Render
-
-- Build command: `pip install -r requirements.txt`
-- Start command: `gunicorn backend:app --workers 1 --threads 4`
-- For permanent storage, attach a paid Render Disk at `/var/data` and set `DB_PATH=/var/data/records.db`. On the free plan the database resets on every restart.
 
 ## Roadmap
 
