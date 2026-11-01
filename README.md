@@ -2,7 +2,7 @@
 
 A phone-camera web app that reads the colour reaction of a **Marquis colorimetric drug test kit**, classifies it with machine learning, and saves every result in a **tamper-evident log**.
 
-**Live demo:** [https://YOUR-SERVICE-NAME.onrender.com](https://drug-testing-companion-2.onrender.com)
+**Live demo:** [[https://YOUR-SERVICE-NAME.onrender.com](https://drug-testing-companion-2.onrender.com)
 *(Free hosting: the first load can take about a minute while the server wakes up. Demo data may reset on restart.)*
 
 > **Smart India Hackathon 2026** · Team **Tech Catalysts** (Team ID 12) · Problem Statement 26231 · MedTech / BioTech / HealthTech · Software
